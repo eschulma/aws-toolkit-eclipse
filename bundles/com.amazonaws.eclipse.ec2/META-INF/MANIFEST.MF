@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Amazon EC2 Plugin
 Bundle-SymbolicName: com.amazonaws.eclipse.ec2;singleton:=true
-Bundle-Version: 1.1.0.qualifier
+Bundle-Version: 1.2.0.qualifier
 Bundle-ClassPath: .,
  lib/jsch-0.1.40/jsch-0.1.40.jar
 Bundle-Activator: com.amazonaws.eclipse.ec2.Ec2Plugin

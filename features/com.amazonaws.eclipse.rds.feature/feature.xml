@@ -2,7 +2,7 @@
 <feature
       id="com.amazonaws.eclipse.rds.feature"
       label="Amazon RDS Management"
-      version="1.1.0"
+      version="1.2.0.qualifier"
       provider-name="Amazon Web Services"
       plugin="com.amazonaws.eclipse.rds">
 

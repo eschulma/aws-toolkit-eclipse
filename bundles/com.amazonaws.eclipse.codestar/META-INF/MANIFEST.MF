@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: AWS CodeStar Plugin
 Bundle-SymbolicName: com.amazonaws.eclipse.codestar;singleton:=true
-Bundle-Version: 1.1.0
+Bundle-Version: 1.2.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: com.amazonaws.eclipse.codestar.CodeStarPlugin
 Bundle-Vendor: Amazon Web Services

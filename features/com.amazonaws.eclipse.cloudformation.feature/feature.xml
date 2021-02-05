@@ -2,7 +2,7 @@
 <feature
       id="com.amazonaws.eclipse.cloudformation.feature"
       label="AWS CloudFormation Tools"
-      version="1.1.0"
+      version="1.2.0.qualifier"
       provider-name="Amazon Web Services"
       plugin="com.amazonaws.eclipse.cloudformation">
 

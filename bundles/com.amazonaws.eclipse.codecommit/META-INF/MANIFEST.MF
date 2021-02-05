@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: AWS CodeCommit Plugin
 Bundle-SymbolicName: com.amazonaws.eclipse.codecommit;singleton:=true
-Bundle-Version: 1.1.0
+Bundle-Version: 1.2.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: com.amazonaws.eclipse.codecommit.CodeCommitPlugin
 Bundle-Vendor: Amazon Web Services
