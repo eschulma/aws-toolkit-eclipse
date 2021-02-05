@@ -349,8 +349,8 @@ public class SourceBranchPage extends WizardPage {
             final Repository db = FileRepositoryBuilder
                     .create(new File("/tmp")); //$NON-NLS-1$
             int timeout = Activator.getDefault().getPreferenceStore().getInt(
-                    UIPreferences.REMOTE_CONNECTION_TIMEOUT);
-            listRemoteOp = new ListRemoteOperation(db, uri, timeout);
+                UIPreferences.REMOTE_CONNECTION_TIMEOUT);            
+			listRemoteOp = new ListRemoteOperation(db, uri, timeout);
             if (credentials != null)
                 listRemoteOp
                         .setCredentialsProvider(new EGitCredentialsProvider(
