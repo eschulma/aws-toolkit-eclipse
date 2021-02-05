@@ -4,6 +4,9 @@ import static com.amazonaws.eclipse.codedeploy.appspec.PreferenceStoreConstants.
 import static com.amazonaws.eclipse.codedeploy.appspec.PreferenceStoreConstants.P_CUSTOM_APPSPEC_TEMPLATE_LOCATIONS;
 
 import java.io.File;
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.net.URI;
 import java.net.URL;
 import java.util.Arrays;
 import java.util.HashSet;
@@ -47,10 +50,7 @@ public class AppspecTemplateRegistry {
         URL bundleBaseUrl = null;
 
         try {
-            Bundle bundle = CodeDeployPlugin.getDefault().getBundle();
-            bundleBaseUrl = FileLocator.resolve(bundle.getEntry("/"));
-            File defaultTemplateMetadataDir = new File(bundleBaseUrl.getFile(),
-                    DEFAULT_TEMPLATE_METADATA_BASEDIR);
+            File defaultTemplateMetadataDir = getDefaultTemplateBasedir();
 
             for (File metadataFile : defaultTemplateMetadataDir.listFiles()) {
                 try {
@@ -68,10 +68,25 @@ public class AppspecTemplateRegistry {
 
         } catch (Exception e) {
             CodeDeployPlugin.getDefault().reportException(
-                    "Failed to load default appspec templates, bundleBaseUrl was " + bundleBaseUrl, e);
+                    "Failed to load default appspec templates", e);
             return null;
         }
+    }
 
+    private File getDefaultTemplateBasedir() {
+        Bundle bundle = CodeDeployPlugin.getDefault().getBundle();
+        File file = null;
+        URL bundleBaseUrl = null;
+        try {
+            bundleBaseUrl = FileLocator.toFileURL(bundle.getEntry(DEFAULT_TEMPLATE_METADATA_BASEDIR));
+            URI bundleBaseUri = new URI(bundleBaseUrl.getProtocol(), bundleBaseUrl.getPath(), null);
+            file = new File(bundleBaseUri);
+        } catch (IOException e) {
+            throw new RuntimeException("Failed to find plugin bundle root, bundleBaseUrl was " + bundleBaseUrl, e);
+        } catch (URISyntaxException e) {
+            throw new RuntimeException("Failed to find plugin bundle root.", e);
+        }
+        return file;
     }
 
     public List<AppspecTemplateMetadataModel> getCustomTemplates() {
