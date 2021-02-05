@@ -19,8 +19,8 @@ import static com.amazonaws.eclipse.core.ui.wizards.WizardWidgetFactory.newCheck
 import java.io.IOException;
 
 import org.eclipse.core.runtime.Assert;
-import org.eclipse.jdt.internal.ui.JavaPlugin;
-import org.eclipse.jdt.internal.ui.javaeditor.JavaSourceViewer;
+//import org.eclipse.jdt.internal.ui.JavaPlugin; ESK
+//import org.eclipse.jdt.internal.ui.javaeditor.JavaSourceViewer; ESK
 import org.eclipse.jface.preference.ColorSelector;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.preference.PreferenceStore;
@@ -69,7 +69,7 @@ public class SyntaxColoringPreferencePage extends AwsToolkitPreferencePage imple
     private ColorSelector colorSelector;
     private Button isBoldButton;
     private Button isItalicButton;
-    private JavaSourceViewer fPreviewViewer;
+//    private JavaSourceViewer fPreviewViewer;  ESK so we compile
 
     public SyntaxColoringPreferencePage() {
         super("CloudFormation Template Syntax Coloring Preference Page");
@@ -173,27 +173,28 @@ public class SyntaxColoringPreferencePage extends AwsToolkitPreferencePage imple
 
     @SuppressWarnings("restriction")
     private void createPreviewer(Composite parent) {
-
-        GridData data = new GridData();
-        data.horizontalSpan = 2;
-        newLabel("Preview:", parent).setLayoutData(data);
-
-        IPreferenceStore store= new ChainedPreferenceStore(new IPreferenceStore[] { overlayPreferenceStore, JavaPlugin.getDefault().getCombinedPreferenceStore()});
-        fPreviewViewer= new JavaSourceViewer(parent, null, null, false, SWT.V_SCROLL | SWT.H_SCROLL | SWT.BORDER, store);
-        TemplateSourceViewerConfiguration configuration = new TemplateSourceViewerConfiguration(store);
-        fPreviewViewer.configure(configuration);
-        Font font= JFaceResources.getFont(GLOBAL_FONT_PROPERTY_NAME);
-        fPreviewViewer.getTextWidget().setFont(font);
-        new SourcePreviewerUpdater(fPreviewViewer, configuration, store);
-        fPreviewViewer.setEditable(false);
-        data = new GridData(GridData.FILL_BOTH);
-        data.horizontalSpan = 2;
-        fPreviewViewer.getControl().setLayoutData(data);
-
-        String content= loadPreviewContentFromFile();
-        TemplateDocument document = new TemplateDocument();
-        document.set(content);
-        fPreviewViewer.setDocument(document);
+// 		  ESK -- don't care about this stuff and it doesn't compile.
+    	
+//        GridData data = new GridData();
+//        data.horizontalSpan = 2;
+//        newLabel("Preview:", parent).setLayoutData(data);
+//
+//        IPreferenceStore store= new ChainedPreferenceStore(new IPreferenceStore[] { overlayPreferenceStore, JavaPlugin.getDefault().getCombinedPreferenceStore()});
+//        fPreviewViewer= new JavaSourceViewer(parent, null, null, false, SWT.V_SCROLL | SWT.H_SCROLL | SWT.BORDER, store);
+//        TemplateSourceViewerConfiguration configuration = new TemplateSourceViewerConfiguration(store);
+//        fPreviewViewer.configure(configuration);
+//        Font font= JFaceResources.getFont(GLOBAL_FONT_PROPERTY_NAME);
+//        fPreviewViewer.getTextWidget().setFont(font);
+//        new SourcePreviewerUpdater(fPreviewViewer, configuration, store);
+//        fPreviewViewer.setEditable(false);
+//        data = new GridData(GridData.FILL_BOTH);
+//        data.horizontalSpan = 2;
+//        fPreviewViewer.getControl().setLayoutData(data);
+//
+//        String content= loadPreviewContentFromFile();
+//        TemplateDocument document = new TemplateDocument();
+//        document.set(content);
+//        fPreviewViewer.setDocument(document);
     }
 
     private void initModel() {

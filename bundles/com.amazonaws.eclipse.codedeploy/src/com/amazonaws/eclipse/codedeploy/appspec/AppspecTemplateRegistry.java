@@ -44,10 +44,11 @@ public class AppspecTemplateRegistry {
     public List<AppspecTemplateMetadataModel> getDefaultTemplates() {
 
         List<AppspecTemplateMetadataModel> models = new LinkedList<>();
+        URL bundleBaseUrl = null;
 
         try {
             Bundle bundle = CodeDeployPlugin.getDefault().getBundle();
-            URL bundleBaseUrl = FileLocator.resolve(bundle.getEntry("/"));
+            bundleBaseUrl = FileLocator.resolve(bundle.getEntry("/"));
             File defaultTemplateMetadataDir = new File(bundleBaseUrl.getFile(),
                     DEFAULT_TEMPLATE_METADATA_BASEDIR);
 
@@ -67,7 +68,7 @@ public class AppspecTemplateRegistry {
 
         } catch (Exception e) {
             CodeDeployPlugin.getDefault().reportException(
-                    "Failed to load default appspec templates.", e);
+                    "Failed to load default appspec templates, bundleBaseUrl was " + bundleBaseUrl, e);
             return null;
         }
 

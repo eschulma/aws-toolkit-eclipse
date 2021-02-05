@@ -27,6 +27,7 @@ import java.util.List;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.jobs.IJobChangeEvent;
 import org.eclipse.core.runtime.jobs.JobChangeAdapter;
+import org.eclipse.egit.core.GitCorePreferences;
 import org.eclipse.egit.core.op.ListRemoteOperation;
 import org.eclipse.egit.core.securestorage.UserPasswordCredentials;
 import org.eclipse.egit.ui.Activator;
@@ -349,7 +350,7 @@ public class SourceBranchPage extends WizardPage {
             final Repository db = FileRepositoryBuilder
                     .create(new File("/tmp")); //$NON-NLS-1$
             int timeout = Activator.getDefault().getPreferenceStore().getInt(
-                    UIPreferences.REMOTE_CONNECTION_TIMEOUT);
+                    GitCorePreferences.core_remoteConnectionTimeout);
             listRemoteOp = new ListRemoteOperation(db, uri, timeout);
             if (credentials != null)
                 listRemoteOp
