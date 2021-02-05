@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Amazon DynamoDB Plugin
 Bundle-SymbolicName: com.amazonaws.eclipse.dynamodb;singleton:=true
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 1.1.0
 Bundle-ClassPath: .
 Bundle-Activator: com.amazonaws.eclipse.dynamodb.DynamoDBPlugin
 Bundle-Vendor: Amazon Web Services

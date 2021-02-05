@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: AWS Toolkit Core Tests
 Bundle-SymbolicName: com.amazonaws.eclipse.core.tests
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 1.1.0
 Bundle-ClassPath: .
 Bundle-Vendor: Amazon Web Services
 Require-Bundle: com.amazonaws.eclipse.core;bundle-version="1.0.0",

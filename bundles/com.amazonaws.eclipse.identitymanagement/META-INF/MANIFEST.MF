@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: AWS Identity and Access Management (IAM) Plugin
 Bundle-SymbolicName: com.amazonaws.eclipse.identitymanagement;singleton:=true
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 1.1.0
 Bundle-ClassPath: .
 Bundle-Activator: com.amazonaws.eclipse.identitymanagement.IdentityManagementPlugin
 Bundle-Vendor: Amazon Web Services

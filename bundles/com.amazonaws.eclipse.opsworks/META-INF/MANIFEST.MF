@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: AWS OpsWorks Plugin
 Bundle-SymbolicName: com.amazonaws.eclipse.opsworks;singleton:=true
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 1.1.0
 Bundle-ClassPath: .,
  icons/
 Bundle-Activator: com.amazonaws.eclipse.opsworks.OpsWorksPlugin

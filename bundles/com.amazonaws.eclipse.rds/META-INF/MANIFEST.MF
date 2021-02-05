@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Amazon Relational Database Service (RDS) Plugin
 Bundle-SymbolicName: com.amazonaws.eclipse.rds;singleton:=true
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 1.1.0
 Bundle-ClassPath: .,
  lib/mysql-connector-java-5.1.33-bin.jar
 Bundle-Activator: com.amazonaws.eclipse.rds.RDSPlugin
