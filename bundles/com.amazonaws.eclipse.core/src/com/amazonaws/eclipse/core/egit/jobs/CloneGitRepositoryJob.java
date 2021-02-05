@@ -23,7 +23,6 @@ import java.util.Collections;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
-import org.eclipse.egit.core.GitCorePreferences;
 import org.eclipse.egit.core.RepositoryUtil;
 import org.eclipse.egit.core.op.CloneOperation;
 import org.eclipse.egit.core.op.ConfigureFetchAfterCloneTask;
@@ -144,7 +143,7 @@ public class CloneGitRepositoryJob {
         URIish uri = new URIish(gitRepositoryInfo.getCloneUri());
         UserPasswordCredentials credentials = gitRepositoryInfo.getCredentials();
         int timeout = Activator.getDefault().getPreferenceStore()
-                .getInt(GitCorePreferences.core_remoteConnectionTimeout);
+                .getInt(UIPreferences.REMOTE_CONNECTION_TIMEOUT);
         wizard.setWindowTitle(NLS.bind(UIText.GitCloneWizard_jobName, uri.toString()));
 
         final CloneOperation op = new CloneOperation(uri, allSelected,
